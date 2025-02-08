@@ -1,0 +1,71 @@
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.egg-info/
+venv/
+.env
+*.env
+
+# Logs and temporary files
+logs/
+*.log
+*.out
+*.err
+tmp/
+temp/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Dependency files (if using Poetry or Pipenv)
+poetry.lock
+Pipfile.lock
+
+# Ignore local database files
+*.sqlite3
+*.db
+
+# IDE/editor config files
+.vscode/
+.idea/
+*.iml
+
+# Docker-related files
+.dockerignore
+docker-compose.override.yml
+
+# Airflow-specific files
+airflow.cfg
+unittests.cfg
+webserver_config.py
+
+# Spark-related files
+metastore_db/
+.derby/
+spark-warehouse/
+
+# Ignore compiled code and JARs
+*.class
+*.jar
+*.war
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Ignore Airflow logs and database
+airflow.db
+airflow_scheduler.log
+airflow-worker.log
+airflow-webserver.log
+airflow-localsettings.py
+airflow.db-journal
+
+# Ignore SSH keys (if used)
+*.pem
+*.pub
+id_rsa
+id_rsa.pub
