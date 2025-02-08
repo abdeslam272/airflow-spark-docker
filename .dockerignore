@@ -1,0 +1,39 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+
+# Ignore virtual environments
+venv/
+.env
+*.env
+
+# Ignore logs and temp files
+logs/
+*.log
+*.out
+*.err
+tmp/
+temp/
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Ignore compiled code and Jupyter notebooks checkpoints
+*.ipynb_checkpoints
+*.class
+*.jar
+*.war
+
+# Ignore dependency files (optional, if you use a requirements file)
+poetry.lock
+Pipfile.lock
+node_modules/
+
+# Ignore Docker-related files
+docker-compose.override.yml
