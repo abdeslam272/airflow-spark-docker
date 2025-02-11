@@ -284,5 +284,36 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    hostname: spark-master
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_UI_PORT=8081
+      - SPARK_WORKER_MEMORY=2g
+      - SPARK_WORKER_CORES=2
+    ports:
+      - "8081:8081"
+      - "7077:7077"
+    networks:
+      - airflow_network
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    hostname: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=2g
+      - SPARK_WORKER_CORES=2
+    depends_on:
+      - spark-master
+    networks:
+      - airflow_network
+
 volumes:
   postgres-db-volume:
