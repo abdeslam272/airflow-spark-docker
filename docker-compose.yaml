@@ -317,3 +317,7 @@ services:
 
 volumes:
   postgres-db-volume:
+
+networks:
+  airflow_network:
+    driver: bridge
